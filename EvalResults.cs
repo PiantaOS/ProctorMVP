@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProctorMVP {
-    internal abstract class EvalResults {
+    public abstract class EvalResults {
         private int plagaurismScore;
         private List<string> feedback;
         

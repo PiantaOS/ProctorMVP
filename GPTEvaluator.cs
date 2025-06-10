@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProctorMVP
+{
+    class GPTEvaluator : IEvaluator
+    {
+        public EvalResults EvaluateWordDoc(Assignment wDoc) {
+            throw new NotImplementedException();
+        }
+
+        public EvalResults EvaluateImage(ImageAssignment imageAssignment) { throw new NotImplementedException(); }
+
+        public EvalResults EvaluatePDF(Assignment pdf) { throw new NotImplementedException(); }
+    }
+}

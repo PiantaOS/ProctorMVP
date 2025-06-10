@@ -1,20 +1,58 @@
-﻿namespace ProctorMVP {
-    public partial class MainPage : ContentPage {
-        int count = 0;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
 
+namespace ProctorMVP {
+    public partial class MainPage : ContentPage {
+        private AssignmentBase CurrentAssignment;
+
+        private IFile loadedFile;
+        private Student loadedStudent;
         public MainPage() {
             InitializeComponent();
         }
+        private async void FilePrompt(object sender, EventArgs e) {
+            Console.WriteLine("Successfully Prompted");
 
-        private void OnCounterClicked(object sender, EventArgs e) {
-            count++;
+            var fileData = await Fileprompt.PickAndLoadFileAsync();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            if(fileData == null) { throw new ArgumentNullException();  }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            loadedFile = fileData;
+
+            UploadedName.Text = "Filename: " + loadedFile.name;
+
+        }
+
+        public void LoadAssignmentBase(AssignmentBase assignment) {
+            CurrentAssignment = assignment;
+            SubmissionName.Text = assignment.Name;
+        }
+
+        private void CreateAssignmentFromCurrentFile() {
+            
+            if(loadedFile == null) { throw new ArgumentNullException(nameof(loadedFile)); }
+            if(loadedStudent == null) { throw new ArgumentNullException($"{nameof(loadedStudent)}"); }
+
+            switch (loadedFile) {
+                case WordFile:
+                    throw new NotImplementedException();
+                   // Assignment newAssignment = new WordAssignment(loadedFile.name, loadedFile);
+                    break;
+
+                case ImageFile:
+                    Assignment newAssignment = new ImageAssignment(loadedFile.name, loadedFile);
+                    loadedFile = default;
+                    
+                    CurrentAssignment.SubmittedAssignments.Add(newAssignment);
+                    loadedStudent.AddAssignment(newAssignment);
+
+                    loadedStudent = default;
+
+                    break;
+                case PDFFile:
+                    throw new NotImplementedException();
+                    //Assignment newAssignment = new Assignment(loadedFile.name, loadedFile);
+                    break;
+            }
         }
     }
 

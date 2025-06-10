@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 namespace ProctorMVP {
     class ImageAssignment : Assignment {
 
-        private Image scan;
+        private ImageFile file;
 
-        public ImageAssignment(string name) : base(name) {
+        public override void Evaluate() {
+            throw new NotImplementedException();
+        }
+
+        public ImageAssignment(string name, IFile file) : base(name, file) {
         }
 
 

@@ -1,25 +1,28 @@
-﻿using AndroidX.ConstraintLayout.Core.State;
+﻿//using AndroidX.ConstraintLayout.Core.State;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace ProctorMVP {
-    internal abstract class Assignment {
+    public abstract class Assignment {
         private int id;
         private string name;
 
         private EvalResults? results;
+        private AssignmentBase reference;
 
-        public Assignment(string name) {
+        private IFile file;
+
+        public Assignment(string name, IFile file) {
             this.name = name;
-            //this.id = idmanager?.GenerateID();
+            this.file = file;
+            //this.id = idmanager?.GenerateID();    
         }
 
-        public abstract void Evaluate() {
-
-        }
+        public abstract void Evaluate();
 
         public EvalResults GetResults() {
             if(results == null) { throw new ArgumentNullException(); }
