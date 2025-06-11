@@ -1,4 +1,5 @@
 ﻿//using AndroidX.ConstraintLayout.Core.State;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,10 @@ using System.Threading.Tasks;
 using SQLite;
 
 namespace ProctorMVP {
-    public abstract class Assignment {
-        private int id;
+    public abstract class Submission { // TEST
+        //[PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+
         private string name;
 
         private EvalResults? results;
@@ -16,13 +19,13 @@ namespace ProctorMVP {
 
         private IFile file;
 
-        public Assignment(string name, IFile file) {
+        public void Setup(string name, IFile file) {
             this.name = name;
             this.file = file;
-            //this.id = idmanager?.GenerateID();    
         }
-
         public abstract void Evaluate();
+
+        public Submission() { }
 
         public EvalResults GetResults() {
             if(results == null) { throw new ArgumentNullException(); }

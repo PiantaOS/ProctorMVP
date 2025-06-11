@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProctorMVP {
     internal interface IEvaluator {
-        public EvalResults EvaluateWordDoc(Assignment wDoc);
+        public EvalResults EvaluateWordDoc(Submission wDoc);
         public EvalResults EvaluateImage(ImageAssignment imageAssignment);
 
-        public EvalResults EvaluatePDF(Assignment pdf);
+        public EvalResults EvaluatePDF(Submission pdf);
     }
 }

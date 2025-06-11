@@ -39,10 +39,11 @@ namespace ProctorMVP {
                     break;
 
                 case ImageFile:
-                    Assignment newAssignment = new ImageAssignment(loadedFile.name, loadedFile);
+                    Submission newAssignment = new ImageAssignment();
+                    newAssignment.Setup(loadedFile.name, loadedFile);
                     loadedFile = default;
                     
-                    CurrentAssignment.SubmittedAssignments.Add(newAssignment);
+                    //CurrentAssignment.SubmittedAssignments.Add(newAssignment);
                     loadedStudent.AddAssignment(newAssignment);
 
                     loadedStudent = default;

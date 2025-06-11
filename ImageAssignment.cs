@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProctorMVP {
-    class ImageAssignment : Assignment {
+    class ImageAssignment : Submission {
 
         private ImageFile file;
 
@@ -13,9 +13,7 @@ namespace ProctorMVP {
             throw new NotImplementedException();
         }
 
-        public ImageAssignment(string name, IFile file) : base(name, file) {
-        }
-
+        public ImageAssignment() { }
 
     }
 }

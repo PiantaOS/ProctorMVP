@@ -8,12 +8,12 @@ namespace ProctorMVP
 {
     class GPTEvaluator : IEvaluator
     {
-        public EvalResults EvaluateWordDoc(Assignment wDoc) {
+        public EvalResults EvaluateWordDoc(Submission wDoc) {
             throw new NotImplementedException();
         }
 
         public EvalResults EvaluateImage(ImageAssignment imageAssignment) { throw new NotImplementedException(); }
 
-        public EvalResults EvaluatePDF(Assignment pdf) { throw new NotImplementedException(); }
+        public EvalResults EvaluatePDF(Submission pdf) { throw new NotImplementedException(); }
     }
 }
