@@ -8,7 +8,6 @@ public partial class LoginPage : ContentPage {
 	protected override async void OnAppearing() {
 		base.OnAppearing();
 		await AppAuth.InitAsync();
-		ErrorText("INIT");
 	}
     public async void TryLogin(object sender, EventArgs e) {
 		string email = Email.Text;

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProctorMVP {
     public class Student {
-        private List<Submission> assignments;
+        private List<Submission> submissions;
 
-        public void AddAssignment(Submission assignment) {
-            assignments.Add(assignment);
+        public void AddSubmissions(Submission submission) {
+            submissions.Add(submission);
         }
 
-        public List<Submission> GetAssignments() {
-            return assignments;
+        public List<Submission> GetSubmissions() {
+            return submissions;
         }
     }
 }

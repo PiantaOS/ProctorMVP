@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="ProctorMVP.Periods"
+    x:Class="ProctorMVP.Assignments"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Periods">
+    Title="Assignments">
 
     <Grid Padding="20" RowDefinitions="*, Auto">
         <ScrollView>
@@ -24,10 +24,10 @@
             <Button
                 Grid.Column="1"
                 Margin="10,0,0,0"
-                Clicked="AddPeriod"
+                Clicked="AddAssignment"
                 CornerRadius="20"
                 HorizontalOptions="End"
-                Text="Add Period"
+                Text="Add Assignment"
                 VerticalOptions="End" />
         </Grid>
     </Grid>

@@ -22,6 +22,12 @@
         Title="PeriodDB"
         ContentTemplate="{DataTemplate local:PeriodPage}"
         Route="PeriodPage" />
-
-
+    <ShellContent
+        Title="Assignments"
+        ContentTemplate="{DataTemplate local:Assignments}"
+        Route="Assignments" />
+    <ShellContent
+        Title="AssignmentCreator"
+        ContentTemplate="{DataTemplate local:AssignmentCreator}"
+        Route="AssignmentCreator" />
 </Shell>

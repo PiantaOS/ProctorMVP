@@ -15,6 +15,10 @@ public partial class PeriodPage : ContentPage
         DashboardName.Text = "Period " + CurrentPeriod.PeriodNumber + " Dashboard";
     }
 
+	public async void GoToAssignments(object sender, EventArgs e) {
+		await Shell.Current.GoToAsync("//Assignments");
+	}
+
     public async void GoBack(object sender, EventArgs e) {
         await Shell.Current.GoToAsync("//Periods");
     }

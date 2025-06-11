@@ -15,6 +15,7 @@ namespace ProctorMVP {
 
         public int PeriodNumber { get; set; }
         private List<Student> students;
+        //private List<AssignmentBase> assignments { get; set;  }
 
         public Period() { }
         public Period(int num) {

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProctorMVP.AssignmentCreator"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AssignmentCreator">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label FontAttributes="Bold" Text="Assignment Type:" />
+        <Label x:Name="AssignmentTypeLabel" />
+
+        <Label FontAttributes="Bold" Text="Name:" />
+        <Entry x:Name="NameEntry" Placeholder="Enter assignment name" />
+
+        <Label FontAttributes="Bold" Text="Description:" />
+        <Editor
+            x:Name="DescriptionEditor"
+            HeightRequest="100"
+            Placeholder="Enter assignment description" />
+
+        <Label FontAttributes="Bold" Text="Assignment Type:" />
+
+        <Entry x:Name="Type" Placeholder="Enter type of assignment (Paper, word document, PDF)" />
+        <Button Clicked="OnCreateClicked" Text="Create Assignment" />
+    </VerticalStackLayout>
+</ContentPage>

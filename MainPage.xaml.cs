@@ -44,7 +44,7 @@ namespace ProctorMVP {
                     loadedFile = default;
                     
                     //CurrentAssignment.SubmittedAssignments.Add(newAssignment);
-                    loadedStudent.AddAssignment(newAssignment);
+                   // loadedStudent.AddAssignment(newAssignment);
 
                     loadedStudent = default;
 

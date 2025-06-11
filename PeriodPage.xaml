@@ -20,10 +20,9 @@
             CornerRadius="15"
             HasShadow="False"
             HeightRequest="200">
-            <!--
-            <Frame.GestureRecognizers>-->
-            <!--    <TapGestureRecognizer Tapped="GoToAssignments" />-->
-            <!--   </Frame.GestureRecognizers>-->
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoToAssignments" />
+            </Frame.GestureRecognizers>
 
             <StackLayout>
                 <Label
