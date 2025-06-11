@@ -1,49 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProctorMVP.LoginPage"
-             Title="LoginPage">
+<ContentPage
+    x:Class="ProctorMVP.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="LoginPage">
     <VerticalStackLayout>
         <Label
-            HorizontalTextAlignment="Center"
-            Text="Welcome Back!"
             FontAttributes="Bold"
             FontSize="30"
-            />
-        <Entry
-            Placeholder="Email"
-            Margin="30,10,30,0"
-            x:Name="Email"
-        />
-        <Entry
-            Placeholder="Password"
-            Margin="30,10,30,0"
-            x:Name="Password"
-            IsPassword="True"
-            />
-        <Label
             HorizontalTextAlignment="Center"
-            Margin="0, 5,0,0"
-            Text=""
+            Text="Welcome Back!" />
+        <Entry
+            x:Name="Email"
+            Margin="30,10,30,0"
+            Placeholder="Email" />
+        <Entry
+            x:Name="Password"
+            Margin="30,10,30,0"
+            IsPassword="True"
+            Placeholder="Password" />
+        <Label
             x:Name="Errors"
-            TextColor="Red"
-            />
+            Margin="0,5,0,0"
+            HorizontalTextAlignment="Center"
+            Text=""
+            TextColor="Red" />
         <Button
-            Text="Sign In"
-            Margin="30,10,30,0"
             x:Name="Signin"
-            BackgroundColor="Green"
-            TextColor="White"
-            Clicked="TryLogin"
-            />
-        <Button
-            Text="Create Account"
             Margin="30,10,30,0"
+            BackgroundColor="Green"
+            Clicked="TryLogin"
+            Text="Sign In"
+            TextColor="White" />
+        <Button
             x:Name="Createacc"
+            Margin="30,10,30,0"
             BackgroundColor="White"
             BorderColor="Grey"
-            TextColor="Black"
             Clicked="TryCreateAccount"
-            />
+            Text="Create Account"
+            TextColor="Black" />
     </VerticalStackLayout>
 </ContentPage>

@@ -5,7 +5,6 @@
 
            // Task.Run(async () => await AppAuth.InitAsync()).Wait();
             MainPage = new AppShell();
-
         }
     }
 }

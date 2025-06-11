@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ProctorMVP.PeriodPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Period Dashboard">
+    <VerticalStackLayout>
+        <Label
+            x:Name="DashboardName"
+            Margin="15,0,0,0"
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalTextAlignment="Start"
+            Text="Period Dashboard" />
+
+        <Frame
+            Margin="15,0,15,10"
+            Padding="10"
+            BackgroundColor="#e0e0e0"
+            CornerRadius="15"
+            HasShadow="False"
+            HeightRequest="200">
+            <!--
+            <Frame.GestureRecognizers>-->
+            <!--    <TapGestureRecognizer Tapped="GoToAssignments" />-->
+            <!--   </Frame.GestureRecognizers>-->
+
+            <StackLayout>
+                <Label
+                    Margin="5,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalTextAlignment="Start"
+                    Text="Assignments"
+                    TextColor="Black" />
+
+                <Label
+                    Margin="5,10,0,0"
+                    FontSize="13"
+                    Text="Create and manage all class periods and assignments"
+                    TextColor="Grey" />
+            </StackLayout>
+        </Frame>
+
+        <Grid
+            ColumnDefinitions="*,*"
+            ColumnSpacing="20"
+            HeightRequest="100">
+
+            <!--  Left  -->
+            <Frame
+                Grid.Column="0"
+                Margin="15,100,-4,0"
+                Padding="10"
+                BackgroundColor="#e0e0e0"
+                CornerRadius="15"
+                HasShadow="False"
+                HeightRequest="200">
+                <Frame.GestureRecognizers />
+                <StackLayout
+                    HorizontalOptions="Start"
+                    Spacing="4"
+                    VerticalOptions="Start">
+                    <Label
+                        Margin="5,0,0,0"
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        HorizontalTextAlignment="Start"
+                        Text="Analytics"
+                        TextColor="Black" />
+                    <Label
+                        Margin="5,0,0,0"
+                        FontSize="13"
+                        Text="Analyze student-wide performance"
+                        TextColor="Grey" />
+                </StackLayout>
+            </Frame>
+
+            <!--  Right  -->
+            <Frame
+                Grid.Column="1"
+                Margin="-4,100,15,0"
+                Padding="10"
+                BackgroundColor="#e0e0e0"
+                CornerRadius="15"
+                HasShadow="False"
+                HeightRequest="200">
+                <Frame.GestureRecognizers />
+                <StackLayout
+                    HorizontalOptions="Start"
+                    Spacing="4"
+                    VerticalOptions="Start">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="16"
+                        Text="Student"
+                        TextColor="Black" />
+                    <Label
+                        FontSize="13"
+                        Text="Manage and create new students"
+                        TextColor="Grey" />
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+
+        <Grid Padding="0,120,0,0" Row="1">
+            <Button
+                Clicked="GoBack"
+                CornerRadius="20"
+                HorizontalOptions="Center"
+                Text="Back"
+                VerticalOptions="End" />
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>

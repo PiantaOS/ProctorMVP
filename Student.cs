@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProctorMVP {
-    internal class Student {
+    public class Student {
         private List<Submission> assignments;
 
         public void AddAssignment(Submission assignment) {

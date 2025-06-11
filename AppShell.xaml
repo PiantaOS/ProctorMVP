@@ -4,12 +4,24 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProctorMVP"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ProctorMVP">
-
+    Title="ProctorMVP"
+    Shell.FlyoutBehavior="Disabled">
     <ShellContent
-        Title="Proctor Dashboard"
+        Title="Proctr Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="MainPage" />
+        Route="LoginPage" />
+    <ShellContent
+        Title="Periods"
+        ContentTemplate="{DataTemplate local:Periods}"
+        Route="Periods" />
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate local:Dashboard}"
+        Route="Dashboard" />
+    <ShellContent
+        Title="PeriodDB"
+        ContentTemplate="{DataTemplate local:PeriodPage}"
+        Route="PeriodPage" />
+
 
 </Shell>

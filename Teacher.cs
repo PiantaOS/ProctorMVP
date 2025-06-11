@@ -9,7 +9,7 @@ namespace ProctorMVP {
     public class Teacher {
 
 
-        List<Period> periods;
+        public List<Period> Periods;
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -18,5 +18,6 @@ namespace ProctorMVP {
         public string Username { get; set; }
 
         public string PasswordHash { get; set; }
+
     }
 }

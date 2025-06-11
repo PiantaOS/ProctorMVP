@@ -14,9 +14,20 @@ namespace ProctorMVP {
 
         public static async Task InitAsync() {
             await Connection.CreateTableAsync<Teacher>();
+            await Connection.CreateTableAsync<Period>();
             //await Connection.CreateTableAsync<Assignment>();
             // Add more tables as needed
         }
+
+        public static async Task AddPeriodToTeacherAsync(Period period, Teacher teacher) {
+            period.TeacherId = teacher.Id;
+            await _db.InsertAsync(period);
+        }
+
+        public static async Task<List<Period>> GetPeriodsForTeacherAsync(int teacherId) {
+            return await _db.Table<Period>().Where(p => p.TeacherId == teacherId).ToListAsync();
+        }
+
     }
 
 }
