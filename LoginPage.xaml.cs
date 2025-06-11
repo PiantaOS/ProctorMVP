@@ -3,10 +3,15 @@ namespace ProctorMVP;
 public partial class LoginPage : ContentPage {
 	public LoginPage() {
 		InitializeComponent();
-        LoginManual("tester2", "test");
+       // LoginManual("tester2", "test");
 	}
 	protected override async void OnAppearing() {
 		base.OnAppearing();
+        Session.CurrentTeacher = null;
+        Email.Text = "";
+        Password.Text = "";
+        ErrorText("");
+
 		await AppAuth.InitAsync();
 	}
     public async void TryLogin(object sender, EventArgs e) {
@@ -58,7 +63,7 @@ public partial class LoginPage : ContentPage {
         string email = Email.Text;
         string pass = Password.Text;
 
-        if (email == "" || pass == "") {
+        if (email == "" || pass == "" || email == null || pass == null) {
             ErrorText("Missing field");
             return;
         }

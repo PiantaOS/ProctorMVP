@@ -7,8 +7,10 @@ namespace ProctorMVP {
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts => {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                   fonts.AddFont("Outfit-VariableFont_wght.ttf", "Outfit-Variable");
+                 // fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+             //    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+              //     fonts.AddFont("Outfit-Regular.ttf", "Outfit-Regular");
                 });
 
 #if DEBUG

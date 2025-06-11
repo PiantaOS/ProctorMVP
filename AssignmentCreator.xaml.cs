@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Office2019.Excel.ThreadedComments;
+
 namespace ProctorMVP;
 
 public partial class AssignmentCreator : ContentPage
@@ -5,7 +7,11 @@ public partial class AssignmentCreator : ContentPage
     public AssignmentCreator() {
         InitializeComponent();
     }
-
+    protected override async void OnAppearing() {
+        NameEntry.Text = "";
+        DescriptionEditor.Text = "";
+        Type.Text = "";
+    }
     private async void OnCreateClicked(object sender, EventArgs e) {
         string name = NameEntry.Text?.Trim();
         string description = DescriptionEditor.Text?.Trim();

@@ -5,17 +5,19 @@ public partial class Assignments : ContentPage
 	public Assignments()
 	{
 		InitializeComponent();
-        LoadAssignments();
 	}
 
     protected override async void OnAppearing() {
+        base.OnAppearing();
+
+        PeriodList.Clear();
         AssignmentBase? assignment = Session.CreatedAssignment;
         if (assignment != null) {
-            AppAuth.AddAssignmentToPeriodAsync(assignment, Session.CurrentViewingPeriod.Id);
+            await AppAuth.AddAssignmentToPeriodAsync(assignment, Session.CurrentViewingPeriod.Id); //LOST 20 MINS BECAUSE I FORGOT TO ADD AWAIT
 
-            AddAssignmentButton(assignment.Name, assignment.Description, assignment);
             Session.CreatedAssignment = null;
         }
+        LoadAssignments();
     }
 
 	private async void LoadAssignments() {

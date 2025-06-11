@@ -7,10 +7,10 @@ public partial class PeriodPage : ContentPage
 	{
 		InitializeComponent();
 
-		
 	}
 
 	protected override async void OnAppearing() {
+		base.OnAppearing();
         CurrentPeriod = Session.CurrentViewingPeriod;
         DashboardName.Text = "Period " + CurrentPeriod.PeriodNumber + " Dashboard";
     }
