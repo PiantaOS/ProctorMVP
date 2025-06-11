@@ -7,15 +7,11 @@ using System.Threading.Tasks;
 using System.Security.Cryptography;
 
 namespace ProctorMVP {
-    public class AuthenticationDB {
-        private readonly SQLiteAsyncConnection _db;
+    public static class AuthenticationDB {
 
-        public AuthenticationDB(string dbPath) {
-            _db = new SQLiteAsyncConnection(dbPath);
-        }
-        public async Task<bool> RegisterAsync(string username, string password) {
-            var existing = await AppAuth.Connection.Table<Teacher>() .Where(t => t.Username == username)  .FirstOrDefaultAsync();
-
+       
+        public static async Task<bool> RegisterAsync(string username, string password) {
+            var existing = await AppAuth.Connection.Table<Teacher>().Where(t => t.Username == username).FirstOrDefaultAsync();
             if (existing != null) return false;
 
             Teacher teacher = new Teacher {
@@ -23,10 +19,20 @@ namespace ProctorMVP {
                 PasswordHash = HashPassword(password)
             };
 
-            await _db.InsertAsync(teacher);
+            await AppAuth.Connection.InsertAsync(teacher);
             return true;
         }
+        public static async Task<Teacher?> LoginAsync(string username, string password) {
+            var teacher = await AppAuth.Connection
+                .Table<Teacher>()
+                .Where(t => t.Username == username)
+                .FirstOrDefaultAsync();
 
+            if (teacher != null && VerifyPassword(password, teacher.PasswordHash))
+                return teacher;
+
+            return null;
+        }
         private static string HashPassword(string password) {
             using var sha = SHA256.Create();
             var bytes = Encoding.UTF8.GetBytes(password);

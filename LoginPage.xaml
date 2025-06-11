@@ -4,6 +4,46 @@
              x:Class="ProctorMVP.LoginPage"
              Title="LoginPage">
     <VerticalStackLayout>
-        
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="Welcome Back!"
+            FontAttributes="Bold"
+            FontSize="30"
+            />
+        <Entry
+            Placeholder="Email"
+            Margin="30,10,30,0"
+            x:Name="Email"
+        />
+        <Entry
+            Placeholder="Password"
+            Margin="30,10,30,0"
+            x:Name="Password"
+            IsPassword="True"
+            />
+        <Label
+            HorizontalTextAlignment="Center"
+            Margin="0, 5,0,0"
+            Text=""
+            x:Name="Errors"
+            TextColor="Red"
+            />
+        <Button
+            Text="Sign In"
+            Margin="30,10,30,0"
+            x:Name="Signin"
+            BackgroundColor="Green"
+            TextColor="White"
+            Clicked="TryLogin"
+            />
+        <Button
+            Text="Create Account"
+            Margin="30,10,30,0"
+            x:Name="Createacc"
+            BackgroundColor="White"
+            BorderColor="Grey"
+            TextColor="Black"
+            Clicked="TryCreateAccount"
+            />
     </VerticalStackLayout>
 </ContentPage>

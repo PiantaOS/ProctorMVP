@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProctorMVP {
-    class Teacher {
+    public class Teacher {
 
 
         List<Period> periods;
