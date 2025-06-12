@@ -8,37 +8,18 @@ using System.Threading.Tasks;
 using SQLite;
 
 namespace ProctorMVP {
-    public abstract class Submission { // TEST
-        //[PrimaryKey, AutoIncrement]
+    public class Submission { // TEST
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
+        public int AssignmentId { get; set; }
 
-        private string name;
-
+        public int SubmittingStudentId { get; set; }
         private EvalResults? results;
-        private AssignmentBase reference;
 
-        private IFile file;
-
-        public void Setup(string name, IFile file) {
-            this.name = name;
-            this.file = file;
-        }
-        public abstract void Evaluate();
+        public IFile File;
+        
 
         public Submission() { }
 
-        public EvalResults GetResults() {
-            if(results == null) { throw new ArgumentNullException(); }
-
-            return results;
-        }
-
-        public int GetID() {
-            return id;
-        }
-
-        public string GetName() {
-            return name;
-        }
     }
 }

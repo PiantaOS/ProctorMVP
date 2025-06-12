@@ -10,7 +10,7 @@ public partial class Assignments : ContentPage
     protected override async void OnAppearing() {
         base.OnAppearing();
 
-        PeriodList.Clear();
+        AssignmentList.Clear();
         AssignmentBase? assignment = Session.CreatedAssignment;
         if (assignment != null) {
             await AppAuth.AddAssignmentToPeriodAsync(assignment, Session.CurrentViewingPeriod.Id); //LOST 20 MINS BECAUSE I FORGOT TO ADD AWAIT
@@ -69,7 +69,7 @@ public partial class Assignments : ContentPage
         };
         frame.GestureRecognizers.Add(tapGesture);
 
-        PeriodList.Children.Add(frame);
+        AssignmentList.Children.Add(frame);
     }
 
     public async void GoBack(object sender, EventArgs e) {

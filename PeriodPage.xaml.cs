@@ -1,3 +1,5 @@
+
+
 namespace ProctorMVP;
 
 public partial class PeriodPage : ContentPage
@@ -22,6 +24,10 @@ public partial class PeriodPage : ContentPage
     public async void GoBack(object sender, EventArgs e) {
         await Shell.Current.GoToAsync("//Periods");
     }
+
+	public async void GoToStudents(object sender, EventArgs e) {
+		await Shell.Current.GoToAsync("//Students");
+	}
 
 
 }

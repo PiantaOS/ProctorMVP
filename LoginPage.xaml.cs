@@ -3,7 +3,7 @@ namespace ProctorMVP;
 public partial class LoginPage : ContentPage {
 	public LoginPage() {
 		InitializeComponent();
-       // LoginManual("tester2", "test");
+        LoginManual("tester2", "test");
 	}
 	protected override async void OnAppearing() {
 		base.OnAppearing();

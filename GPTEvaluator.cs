@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProctorMVP
 {
-    class GPTEvaluator : IEvaluator
+    class GPTEvaluator// : IEvaluator
     {
+        /*
         public EvalResults EvaluateWordDoc(Submission wDoc) {
             throw new NotImplementedException();
         }
@@ -15,5 +16,6 @@ namespace ProctorMVP
         public EvalResults EvaluateImage(ImageAssignment imageAssignment) { throw new NotImplementedException(); }
 
         public EvalResults EvaluatePDF(Submission pdf) { throw new NotImplementedException(); }
+        */
     }
 }

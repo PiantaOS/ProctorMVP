@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:ProctorMVP"
     Title="ProctorMVP"
     Shell.FlyoutBehavior="Disabled">
+
     <ShellContent
         Title="Proctr Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
@@ -30,4 +31,25 @@
         Title="AssignmentCreator"
         ContentTemplate="{DataTemplate local:AssignmentCreator}"
         Route="AssignmentCreator" />
+    <ShellContent
+        Title="AssignmentPage"
+        ContentTemplate="{DataTemplate local:AssignmentPage}"
+        Route="AssignmentPage" />
+    <ShellContent
+        Title="MainPage"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Students"
+        ContentTemplate="{DataTemplate local:Students}"
+        Route="Students" />
+    <ShellContent
+        Title="StudentCreator"
+        ContentTemplate="{DataTemplate local:StudentCreator}"
+        Route="StudentCreator" />
+    <ShellContent
+        Title="Submissions"
+        ContentTemplate="{DataTemplate local:Submissions}"
+        Route="Submissions" />
+
 </Shell>

@@ -14,19 +14,11 @@ namespace ProctorMVP {
         public int TeacherId { get; set; }
 
         public int PeriodNumber { get; set; }
-        private List<Student> students;
         //private List<AssignmentBase> assignments { get; set;  }
 
         public Period() { }
         public Period(int num) {
             this.PeriodNumber = num;
-        }
-        public void AddStudent(Student student) {
-            students.Add(student);
-        }
-
-        public void RemoveStudent(Student student) {
-            students.Remove(student);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//using AuthenticationServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,10 @@ namespace ProctorMVP {
         public static AssignmentBase? CurrentViewingAssignment { get; set; }   //Currenly viewing dashboard assignment
 
         public static AssignmentBase? CreatedAssignment { get; set; }  //The assignment creator made assignment, added to current periods assignments then deleted
+
+        public static Student? CurrentViewingStudent { get; set; }
+        public static Student? CreatedStudent { get; set; }
+        public static Submission? CreatedSubmission { get; set; }
+        public static Submission? CurrentViewingSubmission { get; set; }
     }
 }

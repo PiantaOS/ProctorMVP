@@ -1,25 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProctorMVP.MainPage">
+<ContentPage
+    x:Class="ProctorMVP.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Label 
-                x:Name="SubmissionName"
-                Text="Submission Name" />
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+
+            <Label FontAttributes="Bold" Text="Select a student:" />
+
+            <Picker
+                x:Name="StudentPicker"
+                Title="Choose student"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedIndexChanged="OnStudentSelected" />
+
             <Button
                 x:Name="Upload"
-                Text="Upload Assignment" 
                 Clicked="FilePrompt"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+                Text="Upload Submission" />
 
-            <Label
-                x:Name="UploadedName"
-                Text="Filename: "
-                />
+            <Label x:Name="UploadedName" Text="Filename: " />
+
+            <Button
+                x:Name="Create"
+                Clicked="CreateSubmissionFromCurrentFile"
+                HorizontalOptions="Center"
+                Text="CreateSubmission" />
         </VerticalStackLayout>
     </ScrollView>
 

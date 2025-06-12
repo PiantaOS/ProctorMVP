@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="ProctorMVP.PeriodPage"
+    x:Class="ProctorMVP.AssignmentPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Period Dashboard">
+    Title="AssignmentPage">
     <VerticalStackLayout>
         <Label
-            x:Name="DashboardName"
+            x:Name="Title"
             Margin="15,0,0,0"
             FontAttributes="Bold"
             FontSize="30"
             HorizontalTextAlignment="Start"
-            Text="Period Dashboard" />
+            Text="ASSIGNMENTNAME Dashboard" />
 
         <Frame
             Margin="15,0,15,10"
@@ -21,7 +21,7 @@
             HasShadow="False"
             HeightRequest="200">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="GoToAssignments" />
+                <TapGestureRecognizer Tapped="GoToSubmissions" />
             </Frame.GestureRecognizers>
 
             <StackLayout>
@@ -30,13 +30,13 @@
                     FontAttributes="Bold"
                     FontSize="16"
                     HorizontalTextAlignment="Start"
-                    Text="Assignments"
+                    Text="Submissions"
                     TextColor="Black" />
 
                 <Label
                     Margin="5,10,0,0"
                     FontSize="13"
-                    Text="Create and manage all class periods and assignments"
+                    Text="Create and manage all student submissions"
                     TextColor="Grey" />
             </StackLayout>
         </Frame>
@@ -84,10 +84,7 @@
                 CornerRadius="15"
                 HasShadow="False"
                 HeightRequest="200">
-                <Frame.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoToStudents" />
-                </Frame.GestureRecognizers>
-
+                <Frame.GestureRecognizers />
                 <StackLayout
                     HorizontalOptions="Start"
                     Spacing="4"
@@ -95,11 +92,11 @@
                     <Label
                         FontAttributes="Bold"
                         FontSize="16"
-                        Text="Student"
+                        Text="Students"
                         TextColor="Black" />
                     <Label
                         FontSize="13"
-                        Text="Manage and create new students"
+                        Text="Manage students involved in this assignment"
                         TextColor="Grey" />
                 </StackLayout>
             </Frame>
@@ -115,5 +112,4 @@
                 VerticalOptions="End" />
         </Grid>
     </VerticalStackLayout>
-
 </ContentPage>
